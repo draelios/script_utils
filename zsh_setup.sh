@@ -1,4 +1,4 @@
-#/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # --------- sanity checks ----------
@@ -12,7 +12,7 @@ sudo apt update
 sudo apt install -y zsh git curl ca-certificates fzf
 
 # --------- install Oh My Zsh (unattended) ----------
-export RUNZSH=no  # dont auto-switch during install; we handle later
+export RUNZSH=no  # don't auto-switch during install; we handle later
 export CHSH=no    # let us control chsh explicitly
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "[+] Installing Oh My Zsh"
@@ -116,4 +116,3 @@ echo
 echo "✅ Done! Close and reopen your WSL terminal. You should land in Zsh with Starship."
 echo "   - Your old .zshrc (if any) was backed up to ~/.zshrc.bak"
 echo "   - To tweak prompt: run  \`starship preset\`  or edit ~/.zshrc"
-"
